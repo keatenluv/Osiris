@@ -35,7 +35,7 @@ python steg.py -r -B -o1024 -i8 -wsecret_file.jpg > extracted_data.jpg
 pyhton steg.py -s -b -o1024 -i8 -wnormal_file.jpg -hmy_secret_message.txt > secret_picture.jpg
 
 ```
-## Osiris_timelock.py program file
+## timelock.py program file
 Reads in an epoch time and the current system time to output a code from a MD5 hash typically used to enter an ftp server.
 
 Syntax example:
