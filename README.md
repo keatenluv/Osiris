@@ -37,10 +37,20 @@ pyhton steg.py -s -b -o1024 -i8 -wnormal_file.jpg -hmy_secret_message.txt > secr
 ```
 ## timelock.py program file
 Reads in an epoch time and the current system time to output a code from a MD5 hash typically used to enter an ftp server.
+Can change the epoch time and current system time manually. Can change the code from the hash. Use debug mode.
 
 Syntax example:
 ```
 echo “1999 12 31 23 59 59” | python timelock.py
+```
+## chat_client.py & chat_server.py program files
+Reads a covert message from the binary of 2 different time gaps between letters being sent in an overt message, ends on “EOF”.
+Use debug mode to reveal time gaps and alter times in code accordingly. If no "EOF" ending, hardcode while loop for a certain number of intervals.
+Server code shouldn't be used, but shows what the server side looks like.
+
+Syntax example:
+```
+python chat_client.py
 ```
 ## Vigenere Website with a nice user interface
 [Vigenere Decoder](https://www.dcode.fr/vigenere-cipher)
