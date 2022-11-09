@@ -52,5 +52,12 @@ Syntax example:
 ```
 python chat_client.py
 ```
+## fetch.py program file
+Extracts a secret message from the file permissions of an FTP server. Can change the IP address of the server, the port, username, password, folder, method (right-most 7 bits or all 10 bits).
+
+Syntax example:
+```
+python fetch.py
+```
 ## Vigenere Website with a nice user interface
 [Vigenere Decoder](https://www.dcode.fr/vigenere-cipher)
