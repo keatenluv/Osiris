@@ -1,48 +1,108 @@
-key = input('What is the key?\n')
-text = input('What would you like to encode?\n')
-#key_repeat = []
+#Written by Team Osiris: Amiyah Frierson, Ethan Hebert, Jace Peloquin,
+#Jay Reich, Keaton Love, Madeline Ballew, and Noah Jones
 
-def fix_key(text,key):
-    #key.split()
-    global keylist
-    keylist = [char for char in key]
+import sys
 
-    for index in range(len(text)):
-        keylist.append(key)
-    return key
+def keySolve():
+    key = sys.argv[2].lower() #turn the key to all lowercase
+    #an array of the key values a-z mapped 0-25
+    keyArray=[]
+    for char in key:
+        if (ord('a') <= ord(char) <= ord('z')): #ignore any characters that aren't letters
+            keyArray.append(ord(char) - ord('a'))
+    
+    return keyArray
 
+def encrypt():
+    #read the user input
+    plaintext = input()
+    ciphertext = ""
+    keyValue = 0
+    
+    #iterate through the input and encrypt it
+    for char in plaintext:
 
+        #lowercase - transfer to values 0-25, shift by keyValue, transfer back up to ASCII
+        if (ord('a') <= ord(char) <= ord('z')):
+            newChar = ord(char) - ord('a')
+            newChar = (newChar + keyArray[keyValue]) % 26
+            newChar += ord('a')
+            ciphertext += chr(newChar)
+            keyValue = (keyValue + 1) % len(keyArray) #iterate keyValue
+        
+        #uppercase - transfer to values 0-25, shift by keyValue, transfer back up to ASCII
+        elif (ord('A') <= ord(char) <= ord('Z')):
+            newChar = ord(char) - ord('A')
+            newChar = (newChar + keyArray[keyValue]) % 26
+            newChar += ord('A')
+            ciphertext += chr(newChar)
+            keyValue = (keyValue + 1) % len(keyArray)
 
+        #extra characters (ignore)
+        else:
+            ciphertext += char
 
-# The code below this is an almost working way to make the key long enough to cypher text longer than the given key
-#    while True: #make a list of the key repeating so that it's long enough for the string to be deciphered
-#        key_repeat.append(key)
-#        if (len(key_repeat) >= len(text)): 
-#            for x in key_repeat:
-#                global keyString 
-#                keyString = ''
-#                keyString += x
-#            #key_repeat = ('' .join(key_repeat))
-#            return(keyString)
-#            break
-    #return("" .join(key_repeat))
+    #output ciphertext
+    return ciphertext
 
+def decrypt():
+    #read the user input
+    ciphertext = input()
+    plaintext = ""
+    keyValue = 0
 
-def vigenereCypher(text, keylist):
-    to_cypher = []
+    #iterate through the input and encrypt it
+    for char in ciphertext:
 
-    #make an empty list for the cyphered string to go into
-    for i in range(len(text)):
-        new = (ord(text[i]) + ord(keylist[i])) % 26
-        print(new)
-        # % gives the remainder after a division has taken place = that positioning is our letter
-        #ord() returns the number representing the unicode code of a specified character
-        new += ord('A')
-        to_cypher.append(chr(new)) #add the new character to the list
-   
-    return('' .join(to_cypher)) #.join makes everything into a string
+        #lowercase - transfer to values 0-25, shift by keyValue, transfer back up to ASCII
+        if (ord('a') <= ord(char) <= ord('z')):
+            newChar = ord(char) - ord('a')
+            newChar = (26 + newChar - keyArray[keyValue]) % 26
+            newChar += ord('a')
+            plaintext += chr(newChar)
+            keyValue = (keyValue + 1) % len(keyArray)
+        
+        #uppercase - transfer to values 0-25, shift by keyValue, transfer back up to ASCII
+        elif (ord('A') <= ord(char) <= ord('Z')):
+            newChar = ord(char) - ord('A')
+            newChar = (26 + newChar - keyArray[keyValue]) % 26
+            newChar += ord('A')
+            plaintext += chr(newChar)
+            keyValue = (keyValue + 1) % len(keyArray)
 
+        #extra characters (ignore)
+        else:
+            plaintext += char
+        
+    #output ciphertext
+    return plaintext
+    
+#check if user inputs correct arguments
+if (len(sys.argv) == 3):
 
-fix_key(text,key)    
-print(key)
-print(vigenereCypher(text,keylist))
+    #get the key as an array of shift values
+    keyArray = keySolve()
+    
+    #encryption
+    if (sys.argv[1] == "-e"): 
+        while(1):
+            try:
+                output = encrypt()
+                sys.stdout.write(output + "\n")
+            except:
+                break
+        
+    #decryption
+    elif (sys.argv[1] == "-d"):
+        while(1):
+            try:
+                output = decrypt()
+                sys.stdout.write(output + "\n")
+            except:
+                break
+
+    else:
+        print("Format: python vigenere.py mode key\nmode: '-e' = encryption, '-d' = decryption, key: custom key")
+
+else:
+    print("Format: python vigenere.py mode key\nmode: '-e' = encryption, '-d' = decryption, key: custom key")
