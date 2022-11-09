@@ -9,6 +9,7 @@ python Osiris_binary.py File_to_decode.txt
 ```
 ## Osiris_xor.py program file
 This is a XOR encrypter and decrypter program that implements the XOR cryptography method
+
 Encryption Syntax example:
 ```
 python Osiris_xor.py < plaintext.txt > ciphertext.txt
@@ -34,4 +35,5 @@ python steg.py -r -B -o1024 -i8 -wsecret_file.jpg > extracted_data.jpg
 pyhton steg.py -s -b -o1024 -i8 -wnormal_file.jpg -hmy_secret_message.txt > secret_picture.jpg
 
 ```
-
+## Vigenere Website with a nice user interface
+[Vigenere Decoder](https://www.dcode.fr/vigenere-cipher)
