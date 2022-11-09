@@ -35,6 +35,17 @@ python steg.py -r -B -o1024 -i8 -wsecret_file.jpg > extracted_data.jpg
 pyhton steg.py -s -b -o1024 -i8 -wnormal_file.jpg -hmy_secret_message.txt > secret_picture.jpg
 
 ```
+## Vigenere.py program file
+Encodes/decodes secret messages with a key. Usually the key is given.
+
+Encryption Syntax example:
+```
+python vigenere.py -e mykey
+```
+Decryption Syntax example:
+```
+python vigenere.py -d mykey
+```
 ## timelock.py program file
 Reads in an epoch time and the current system time to output a code from a MD5 hash typically used to enter an ftp server.
 Can change the epoch time and current system time manually. Can change the code from the hash. Use debug mode.
