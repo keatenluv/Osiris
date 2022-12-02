@@ -2,7 +2,7 @@
 Repo for University Cyber Security Class
 	
 This class introduced us to topics such as:
-	- Computer Networks
+	- Computer Networks\n
 	- Cryptography
 	- Computer Network Defense
 	- Covert Channels
