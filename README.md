@@ -4,15 +4,15 @@
 This class introduced us to topics such as:
 * Computer Networks
 * Cryptography 
-* Computer Network Defense <br>
-* Covert Channels <br>
-* Reverse Engineering <br>
-	* Keystroke Dynamics <br>
-	* Access Control <br>
-	* Database Management Systems & Exploits <br>
-	* Web Site Exploitation <br>
+* Computer Network Defense
+* Covert Channels
+* Reverse Engineering
+* Keystroke Dynamics
+* Access Control
+* Database Management Systems & Exploits
+* Web Site Exploitation
 
-This repo houses all programs developed for this class and directions for using them.
+*This repo houses all programs developed for this class and directions for using them.*
 
 
 ## Osiris_binary.py program file
