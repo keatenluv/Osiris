@@ -1,5 +1,19 @@
 # Computer-Network-Security
-Programs for University Cyber Security Class
+Repo for University Cyber Security Class
+	
+This class introduced us to topics such as:
+	- Computer Networks
+	- Cryptography
+	- Computer Network Defense
+	- Covert Channels
+	- Reverse Engineering
+	- Keystroke Dynamics
+	- Access Control
+	- Database Management Systems & Exploits
+	- Web Site Exploitation
+
+This repo houses all programs developed for this class and directions for using them.
+
 
 ## Osiris_binary.py program file
 This is a Binary decoder python program that can auto-detect and decode 7 or 8-bit binary encoded files
