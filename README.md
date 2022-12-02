@@ -12,7 +12,7 @@ This class introduced us to topics such as:
 * Database Management Systems & Exploits
 * Web Site Exploitation
 
-<br><br>*This repo houses all programs developed for this class and directions for using them.*
+<br>*This repo houses all programs developed for this class and directions for using them.*
 
 
 ## Osiris_binary.py program file
