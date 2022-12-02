@@ -2,15 +2,15 @@
 **Repo for University Cyber Security Class**
 	
 This class introduced us to topics such as:
-	- Computer Networks <br>
-	- Cryptography <br>
-	- Computer Network Defense <br>
-	- Covert Channels <br>
-	- Reverse Engineering <br>
-	- Keystroke Dynamics <br>
-	- Access Control <br>
-	- Database Management Systems & Exploits <br>
-	- Web Site Exploitation <br>
+	* Computer Networks <br>
+	* Cryptography <br>
+	* Computer Network Defense <br>
+	* Covert Channels <br>
+	* Reverse Engineering <br>
+	* Keystroke Dynamics <br>
+	* Access Control <br>
+	* Database Management Systems & Exploits <br>
+	* Web Site Exploitation <br>
 
 This repo houses all programs developed for this class and directions for using them.
 
